@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:text="生产小米"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/xiaomi_btn"/>
+
+    <Button
+        android:text="生产化为"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/samsong_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:id="@+id/huawei_btn"/>
+
+    <Button
+        android:text="生产三星"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/samsong_btn"
+        android:layout_alignBaseline="@+id/xiaomi_btn"
+        android:layout_alignBottom="@+id/xiaomi_btn"
+        android:layout_toLeftOf="@+id/huawei_btn"
+        android:layout_toStartOf="@+id/huawei_btn"
+        android:layout_marginRight="36dp"
+        android:layout_marginEnd="36dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/xiaomi_btn"
+        android:layout_alignLeft="@+id/xiaomi_btn"
+        android:layout_alignStart="@+id/xiaomi_btn"
+        android:layout_marginTop="38dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/res_tv"/>
+</RelativeLayout>

@@ -3,7 +3,6 @@ package designpattern.dzah.wchhuangya.ch.com.designpattern;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -17,8 +16,10 @@ import java.util.Map;
 import java.util.Stack;
 
 import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.AdapterPatternActivity;
+import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.SimpleFactoryPatternActivity;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends BaseActivity {
+    public static final String TAG_FACTORY = "TAG_FACTORY";
     /** 列表中显示的一级数据 */
     private List<Map<String, Object>> mDataList = new ArrayList<>();
     /** 列表中显示的非一级数据 */
@@ -95,40 +96,54 @@ public class MainActivity extends FragmentActivity {
 
     /** 初始化一级数据 */
     private void initDataList() {
-        Map<String, Object> map = new HashMap<>();
-
-        map.put(KEY_TITLE, "适配器模式");
-        map.put(KEY_HAS_CHILD, true);
-        map.put(KEY_ACTIVITY, "");
-        map.put(KEY_TAG, TAG_ADAPTER);
-        mDataList.add(map);
-
+        addFirstLevelData("适配器模式", true, "", TAG_ADAPTER);
+        addFirstLevelData("工厂模式", true, "", TAG_FACTORY);
     }
 
     /** 初始化一级以下的数据 */
     private void initDataMap() {
-        initAdapterDataMap(); // 初始化适配器二级数据
+        initAdapterDataMap();
+        initFactoryDataMap();
     }
 
     /** 初始化适配器二级数据 */
     private void initAdapterDataMap() {
         List<Map<String, Object>> list = new ArrayList<>();
-        Map<String, Object> map = new HashMap<>();
 
-        map.put(KEY_TITLE, "类适配器模式");
-        map.put(KEY_HAS_CHILD, false);
-        map.put(KEY_ACTIVITY, "");
-        map.put(KEY_TAG, "");
-        list.add(map);
-
-        map = new HashMap<>();
-        map.put(KEY_TITLE, "对象适配器模式");
-        map.put(KEY_HAS_CHILD, false);
-        map.put(KEY_ACTIVITY, AdapterPatternActivity.class);
-        map.put(KEY_TAG, "");
-        list.add(map);
+        list.add(addOtherLevelData("类适配器模式", false, "", ""));
+        list.add(addOtherLevelData("对象适配器模式", false, AdapterPatternActivity.class, ""));
 
         mDataMap.put(TAG_ADAPTER, list);
+    }
+
+    private void initFactoryDataMap() {
+        List<Map<String, Object>> list = new ArrayList<>();
+
+        list.add(addOtherLevelData("简单工厂模式", false, SimpleFactoryPatternActivity.class, ""));
+
+        mDataMap.put(TAG_FACTORY, list);
+    }
+
+    private void addFirstLevelData(String title, boolean hasChild, Object activity, String tag) {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put(KEY_TITLE, title);
+        map.put(KEY_HAS_CHILD, hasChild);
+        map.put(KEY_ACTIVITY, activity);
+        map.put(KEY_TAG, tag);
+
+        mDataList.add(map);
+    }
+
+    private Map<String, Object> addOtherLevelData(String title, boolean hasChild, Object activity, String tag) {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put(KEY_TITLE, title);
+        map.put(KEY_HAS_CHILD, hasChild);
+        map.put(KEY_ACTIVITY, activity);
+        map.put(KEY_TAG, tag);
+
+        return map;
     }
 
 

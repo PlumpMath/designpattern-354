@@ -17,6 +17,7 @@
         </activity>
 
         <activity android:name=".activity.AdapterPatternActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.SimpleFactoryPatternActivity" android:screenOrientation="portrait" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
