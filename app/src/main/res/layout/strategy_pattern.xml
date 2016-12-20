@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <TextView
+        android:text="数量"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="29dp"
+        android:id="@+id/strategy_num_tv"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/strategy_num_tv"
+        android:layout_toEndOf="@+id/strategy_num_tv"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/strategy_num_et"/>
+
+    <TextView
+        android:text="单价"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/strategy_num_et"
+        android:layout_alignLeft="@+id/strategy_num_tv"
+        android:layout_alignStart="@+id/strategy_num_tv"
+        android:layout_marginTop="49dp"
+        android:id="@+id/textView2"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_below="@+id/strategy_num_et"
+        android:layout_alignLeft="@+id/strategy_num_et"
+        android:layout_alignStart="@+id/strategy_num_et"
+        android:layout_marginTop="34dp"
+        android:id="@+id/strategy_price_et"/>
+
+    <Button
+        android:text="正常"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/strategy_price_et"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="17dp"
+        android:id="@+id/strategy_normal_btn"/>
+
+    <Button
+        android:text="周年庆"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/strategy_normal_btn"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/strategy_year_btn"/>
+
+    <Button
+        android:text="大促销"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/strategy_year_btn"
+        android:layout_toRightOf="@+id/strategy_price_et"
+        android:layout_toEndOf="@+id/strategy_price_et"
+        android:id="@+id/strategy_big_btn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/strategy_normal_btn"
+        android:layout_alignLeft="@+id/strategy_normal_btn"
+        android:layout_alignStart="@+id/strategy_normal_btn"
+        android:layout_marginTop="41dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/strategy_res_tv"/>
+
+</RelativeLayout>

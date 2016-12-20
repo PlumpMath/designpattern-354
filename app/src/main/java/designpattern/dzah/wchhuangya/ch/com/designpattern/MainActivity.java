@@ -17,9 +17,11 @@ import java.util.Stack;
 
 import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.AdapterPatternActivity;
 import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.SimpleFactoryPatternActivity;
+import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.StrategyPatternActivity;
 
 public class MainActivity extends BaseActivity {
     public static final String TAG_FACTORY = "TAG_FACTORY";
+    public static final String TAG_STRATEGY = "TAG_STRATEGY";
     /** 列表中显示的一级数据 */
     private List<Map<String, Object>> mDataList = new ArrayList<>();
     /** 列表中显示的非一级数据 */
@@ -98,12 +100,14 @@ public class MainActivity extends BaseActivity {
     private void initDataList() {
         addFirstLevelData("适配器模式", true, "", TAG_ADAPTER);
         addFirstLevelData("工厂模式", true, "", TAG_FACTORY);
+        addFirstLevelData("策略模式", true, "", TAG_STRATEGY);
     }
 
     /** 初始化一级以下的数据 */
     private void initDataMap() {
         initAdapterDataMap();
         initFactoryDataMap();
+        initStrategyDataMap();
     }
 
     /** 初始化适配器二级数据 */
@@ -122,6 +126,14 @@ public class MainActivity extends BaseActivity {
         list.add(addOtherLevelData("简单工厂模式", false, SimpleFactoryPatternActivity.class, ""));
 
         mDataMap.put(TAG_FACTORY, list);
+    }
+
+    private void initStrategyDataMap() {
+        List<Map<String, Object>> list = new ArrayList<>();
+
+        list.add(addOtherLevelData("策略模式", false, StrategyPatternActivity.class, ""));
+
+        mDataMap.put(TAG_STRATEGY, list);
     }
 
     private void addFirstLevelData(String title, boolean hasChild, Object activity, String tag) {
