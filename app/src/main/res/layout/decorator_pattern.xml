@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <Button
+        android:text="套装一"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/mode1_btn"/>
+
+    <Button
+        android:text="套装二"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/mode1_btn"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/mode2_btn"/>
+
+    <Button
+        android:text="套装三 "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/mode2_btn"
+        android:layout_toRightOf="@+id/mode2_btn"
+        android:layout_toEndOf="@+id/mode2_btn"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:id="@+id/mode3_btn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mode1_btn"
+        android:layout_alignLeft="@+id/mode1_btn"
+        android:layout_alignStart="@+id/mode1_btn"
+        android:layout_marginTop="53dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/res_tv"/>
+</RelativeLayout>
