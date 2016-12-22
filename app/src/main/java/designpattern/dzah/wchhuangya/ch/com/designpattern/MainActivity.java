@@ -17,6 +17,7 @@ import java.util.Stack;
 
 import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.AdapterPatternActivity;
 import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.DecoratorPatternActivity;
+import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.StaticProxyPatternActivity;
 import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.SimpleFactoryPatternActivity;
 import designpattern.dzah.wchhuangya.ch.com.designpattern.activity.StrategyPatternActivity;
 
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity {
     public static final String TAG_FACTORY = "TAG_FACTORY";
     public static final String TAG_STRATEGY = "TAG_STRATEGY";
     public static final String TAG_DECORATOR = "TAG_DECORATOR";
+    public static final String TAG_PROXY = "TAG_PROXY";
     /** 列表中显示的一级数据 */
     private List<Map<String, Object>> mDataList = new ArrayList<>();
     /** 列表中显示的非一级数据 */
@@ -104,6 +106,7 @@ public class MainActivity extends BaseActivity {
         addFirstLevelData("工厂模式", true, "", TAG_FACTORY);
         addFirstLevelData("策略模式", true, "", TAG_STRATEGY);
         addFirstLevelData("装饰模式", true, "", TAG_DECORATOR);
+        addFirstLevelData("代理模式", true, "", TAG_PROXY);
     }
 
     /** 初始化一级以下的数据 */
@@ -112,6 +115,7 @@ public class MainActivity extends BaseActivity {
         initFactoryDataMap();
         initStrategyDataMap();
         initDecoratorDataMap();
+        initProxyDataMap();
     }
 
     /** 初始化适配器二级数据 */
@@ -146,6 +150,14 @@ public class MainActivity extends BaseActivity {
         list.add(addOtherLevelData("装饰模式", false, DecoratorPatternActivity.class, ""));
 
         mDataMap.put(TAG_DECORATOR, list);
+    }
+
+    private void initProxyDataMap() {
+        List<Map<String, Object>> list = new ArrayList<>();
+
+        list.add(addOtherLevelData("静态代理模式", false, StaticProxyPatternActivity.class, ""));
+
+        mDataMap.put(TAG_PROXY, list);
     }
 
     private void addFirstLevelData(String title, boolean hasChild, Object activity, String tag) {

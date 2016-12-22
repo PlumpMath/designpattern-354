@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:text="真正追求者：小菜"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="27dp"
+        android:id="@+id/real_subject_tv"/>
+
+    <TextView
+        android:text="代理：小代"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/real_subject_tv"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="43dp"
+        android:layout_marginEnd="43dp"
+        android:id="@+id/proxy_tv"/>
+
+    <TextView
+        android:text="被追求者：小丽"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/proxy_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:id="@+id/girl_tv"/>
+
+    <Button
+        android:text="送礼物"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/girl_tv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="29dp"
+        android:id="@+id/give_presents_btn"/>
+
+    <Button
+        android:text="送花"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/stand_treat_btn"
+        android:layout_alignLeft="@+id/proxy_tv"
+        android:layout_alignStart="@+id/proxy_tv"
+        android:id="@+id/give_flower_btn"/>
+
+    <Button
+        android:text="请客"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stand_treat_btn"
+        android:layout_alignBaseline="@+id/give_presents_btn"
+        android:layout_alignBottom="@+id/give_presents_btn"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/give_presents_btn"
+        android:layout_alignLeft="@+id/give_presents_btn"
+        android:layout_alignStart="@+id/give_presents_btn"
+        android:layout_marginTop="51dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:id="@+id/res_tv"/>
+</RelativeLayout>
